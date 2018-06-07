@@ -1,0 +1,14 @@
+
+<h1> Showing all Posts </h1>
+
+<% @posts.each do  |post|%>
+<%= post.title  %>
+<%= post.description  %>
+<%= link_to  "Edit Post", edit_post_path(post) %>
+<%= link_to  "Delete Post", post, method: :delete, data: {confirm: "Are you sure you want to delete your post?"}%>
+<% end  %>
+
+<%= link_to  "Create Post", new_post_path %>
+
+
+
