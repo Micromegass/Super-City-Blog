@@ -1,16 +1,30 @@
 
-<h1> Showing all Posts </h1>
+<h1 class"heading"> Showing all Posts </h1>
+
+
+
+
 
 <% @posts.each do  |post|%>
-<%= post.title  %>
-<%= post.description  %> <br>
-<%= link_to post.title, post %>
-<%= link_to  "Edit Post", edit_post_path(post) %>
-<%= link_to  "Delete Post", post, method: :delete, data: {confirm: "Are you sure you want to delete your post?"}%>
-<% end  %>
+
+<% if post.image.exists? %>
+  <div class="product-img">
+    <%= image_tag post.image.url(:thumb) %>
+  </div>
+<% end %>
+
+<div class="allposts"> 
+    <%= post.title%>
+    <%= post.description  %> <br>
+    <%= link_to post.title, post %>
+    <%= link_to  "Edit Post", edit_post_path(post) %>
+    <%= link_to  "Delete Post", post, method: :delete, data: {confirm: "¿Estas seugro que queires borrar el post?"}%>
+    <% end  %>
+</div>
+
 <% if signed_in? %>
-<div class="text-right">
-  <%= link_to "Crear Post", new_post_path, class: "btn btn-primary" %>
+<div class="text-center">
+  <%= link_to "Nuevo Post", new_post_path, class: "btn btn-primary" %>
 </div>
 <% end %>
 
