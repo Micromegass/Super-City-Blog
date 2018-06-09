@@ -8,7 +8,10 @@
 <%= link_to  "Edit Post", edit_post_path(post) %>
 <%= link_to  "Delete Post", post, method: :delete, data: {confirm: "Are you sure you want to delete your post?"}%>
 <% end  %>
-<%= link_to  "Create Post", new_post_path %>
-
+<% if signed_in? %>
+<div class="text-right">
+  <%= link_to "Crear Post", new_post_path, class: "btn btn-primary" %>
+</div>
+<% end %>
 
 
