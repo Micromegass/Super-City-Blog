@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <h1>Create Account</h1>
+      <h1>Crear Cuenta</h1>
 
       <%= form_for @user do |f| %>
         <div class="form-group">
@@ -9,16 +9,14 @@
         </div>
 
         <div class="form-group">
-          <%= f.password_field :password, class: "form-control input-lg", placeholder: "Password" %>
+          <%= f.password_field :password, class: "form-control input-lg", placeholder: "Contraseña" %>
         </div>
 
         <div class="form-group">
-          <%= f.text_field :name, class: "form-control input-lg", placeholder: "Name" %>
+          <%= f.text_field :name, class: "form-control input-lg", placeholder: "Nombre" %>
         </div>
 
-        <div class="input-group input-group-lg">
-          <%= f.text_field :username, class: "form-control input-lg", placeholder: "Nickname" %>
-        </div>
+     
 
         <div class="actions">
           <%= f.submit class: "btn btn-primary btn-block btn-lg" %>
