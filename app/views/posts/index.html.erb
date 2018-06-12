@@ -6,19 +6,19 @@
   </div>
 
   <div class="description">
-    <span class="post-description"> <%= post.description  %> <br></span>
+    <span class="post-description"> <%= post.description  %></span> 
   </div>
 
-  <br>
 
- <div glyphs-nav>
-    <% if signed_in? %>
+  <% if signed_in? %>
+  <br>
+  <div class="glyphs">
     <%= link_to  "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_post_path(post) %>
     <%= link_to  "<span class='glyphicon glyphicon-trash'></span>".html_safe, post, method: :delete, data: {confirm: "¿Estas seugro que queires borrar el post?"}%>
-   <br><br>
-    <% end  %>
+  </div>
+   <br>
     <% end %>
-</div>
+    <% end %>
 
 
 
@@ -31,3 +31,4 @@
 </div>
 
 <br> <br>
+

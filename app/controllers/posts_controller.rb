@@ -17,6 +17,7 @@ before_action :private_access, except: [:index, :show]
 
     def create
         @post = Post.new(post_params)
+        @post.user = current_user
         if @post.save
             flash[:success] = "Fabuloso! Successfully created new post!"
             redirect_to posts_path
