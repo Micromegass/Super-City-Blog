@@ -1,3 +1,109 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.form-title {
+    text-align: center;
+    font-style: initial;
+    font-weight: bold;
+    color : rgba(0, 0, 0, 0.8);
+    
+}
+
+
+.letter-form {
+    color:black;
+    font-size: 14px;
+    text-align: left;
+}
+
+
+.post-page {
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 15px;
+    padding: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+
+
+}
+
+.post-head {
+
+    text-align: center;
+    font-weight: bold;
+    color: black;
+
+
+}
+
+
+.heading {
+
+    text-align: center; 
+    font-weight: bold;
+}
+
+
+.allposts {
+
+    text-align: center;
+}
+
+
+.description {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 5px;
+    margin-left: 300px;
+    margin-right: 300px;
+
+}
+
+
+
+
+
+
+.glyphicon {
+
+color:black;
+font-size: 17px;
+
+         &:hover, &:focus {color: #F04500;text-decoration: none;
+         }
+
+}
+
+
+
+.post-title {
+
+    font-size: 30px;
+    font-weight:bold;
+    color: black;
+    text-align: left;
+    text-decoration: none;
+
+}
+
+
+.allposts {
+        padding-top: 70px;
+        /* The image used */
+        background-image: url('city8.jpeg');
+
+        /* Full height */
+        height: 100%;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+
+}

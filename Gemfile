@@ -67,5 +67,8 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sass-rails', '>= 3.2'
 
 gem 'jquery-rails'
-gem 'gravatar'
+gem 'gravatar-ultimate'
 gem 'bcrypt'
+gem 'xmlrpc'
+gem "paperclip", "~> 6.0.0"
+gem 'annotate'

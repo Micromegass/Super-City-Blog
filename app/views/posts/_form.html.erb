@@ -1,12 +1,46 @@
 
+<div class="allposts">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
 <%= form_for @post do |f| %>
-<%= form_title %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-     <%= f.label :description %>
-    <%= f.text_area :description %>
+
+<h1 class="form-title"><%= form_title %></h1>
+  
+<div class="letter-form">
+    <%= f.label :City %>
+</div>
+
+  <div class="form-group">
+    <%= f.text_field :title, class:"form-control", placeholder:"Nombre de la ciudad"%>
   </div>
-  <%= f.submit %>
+
+<div class="letter-form">
+  <%= f.label :Descripción %>
+</div> 
+
+
+   <div class="form-group">
+   <%= f.text_area :description, rows:15, class:"form-control", placeholder: "Cuentanos un poco sobre la ciudad o el lugar especial"%>
+   </div>
+
+  
+  <div class="letter-form">
+    <%= f.label :Imágen %>
+  </div>
+
+ <div class="letter-form"> 
+ <%= f.file_field :image %>
+ </div>
+ 
+   
+  <div class="text-center">
+  <%= f.submit 'Crear Post', class: 'btn btn-default' %>
+  </div>
+
 <% end %>
 
+    </div>
+  </div>
+</div>
+</div>
