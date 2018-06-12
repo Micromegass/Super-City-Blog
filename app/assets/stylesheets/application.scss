@@ -20,23 +20,16 @@ body,
 html {
     height: 100%;
     margin: 0;
+    color: whitesmoke;
 }
 
 .navbar-nav>li>a.avatar {
     padding-top: 7px;
     padding-bottom: 7px;
     img {
-        width: 45px;
+        width: 40px;
     }
 }
 
-body {
 
-font-family: 'Roboto', sans-serif;
-   background-color: #5b3e47;
-  background-image: image-url('city.jpeg');
-  background-repeat: no-repeat;
-  background-size: 160%;
 
-   color: whitesmoke;
-};

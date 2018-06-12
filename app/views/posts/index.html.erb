@@ -1,31 +1,33 @@
 
-<h1 class"heading"> Showing all Posts </h1>
-
-
-
-
-
 <% @posts.each do  |post|%>
-
-<% if post.image.exists? %>
-  <div class="product-img">
-    <%= image_tag post.image.url(:thumb) %>
-  </div>
-<% end %>
-
 <div class="allposts"> 
-    <%= post.title%>
-    <%= post.description  %> <br>
-    <%= link_to post.title, post %>
-    <%= link_to  "Edit Post", edit_post_path(post) %>
-    <%= link_to  "Delete Post", post, method: :delete, data: {confirm: "¿Estas seugro que queires borrar el post?"}%>
+  <div>
+    <span class"post-title"> <%= link_to post.title, post, class:"post-title"%> </span>
+  </div>
+
+  <div class="description">
+    <span class="post-description"> <%= post.description  %> <br></span>
+  </div>
+
+  <br>
+
+ <div glyphs-nav>
+    <% if signed_in? %>
+    <%= link_to  "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_post_path(post) %>
+    <%= link_to  "<span class='glyphicon glyphicon-trash'></span>".html_safe, post, method: :delete, data: {confirm: "¿Estas seugro que queires borrar el post?"}%>
+   <br><br>
     <% end  %>
+    <% end %>
 </div>
+
+
 
 <% if signed_in? %>
+<br>
 <div class="text-center">
-  <%= link_to "Nuevo Post", new_post_path, class: "btn btn-primary" %>
+  <%= link_to "Nuevo Post", new_post_path, class: "btn btn-default" %>
 </div>
 <% end %>
+</div>
 
-
+<br> <br>
