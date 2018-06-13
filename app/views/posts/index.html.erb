@@ -16,10 +16,10 @@
 
   <% if signed_in? && post.user == current_user %>
   <br>
-  <div class="glyphs">
+  <div>
     <%= link_to  "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_post_path(post) %>
-    <%= link_to  "<span class='glyphicon glyphicon-trash'></span>".html_safe, post, method: :delete, data: {confirm: "¿Estas seugro que queires borrar el post?"}%>
-  </div>
+      <%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este producto?" } %>
+    </div>
    
     <% end %>
     <% end %>
