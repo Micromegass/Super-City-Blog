@@ -1,0 +1,19 @@
+es:
+  errors:
+    messages:
+      blank: "no puede estar en blanco mijito"
+      invalid: "es inválido parce"
+      too_short: "no tiene suficiente caractéres compa"
+      characters: "caractéres"
+      
+
+  activerecord:
+    attributes:
+      user:
+        name: "Nombre"
+        password: "Contraseña"
+        username: "usario"
+      post:
+        description: "Descripción"
+        titel: "título"
+
