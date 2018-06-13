@@ -6,14 +6,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
-      sign_in(user)
-      flash[:success] = "Successfully singed in!"
-      redirect_to root_path
+      user = User.find_by(email: params[:email])
+      if user && user.authenticate(params[:password])
+       sign_in(user)
+       redirect_to root_path
       else
+        flash[:alert] = "Tu email y/o contraseña son inválidas. Intenta nuevamente."
         render :new
-      end 
+   end
   end
 
 

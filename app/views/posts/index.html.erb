@@ -1,22 +1,26 @@
 
 <% @posts.each do  |post|%>
-<div class="allposts"> 
+<div class="allposts">
+
+  <br> <br>
   <div>
-    <span class"post-title"> <%= link_to post.title, post, class:"post-title"%> </span>
+    <span> <%= link_to post.title, post, class:"post-title"%> </span>
   </div>
+
+  <p class="username"> Gracias <%= post.user.name %> para compartir este bonito lugar (fue publicado <%= post.created_at.strftime("%B %d, %Y") %>) </p>
 
   <div class="description">
-    <span class="post-description"> <%= post.description  %></span> 
+    <span class="post-description"> <%= truncate(post.description, :length => 250 , :seperator => ' ') %></span> 
   </div>
 
 
-  <% if signed_in? %>
+  <% if signed_in? && post.user == current_user %>
   <br>
   <div class="glyphs">
     <%= link_to  "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_post_path(post) %>
     <%= link_to  "<span class='glyphicon glyphicon-trash'></span>".html_safe, post, method: :delete, data: {confirm: "¿Estas seugro que queires borrar el post?"}%>
   </div>
-   <br>
+   
     <% end %>
     <% end %>
 
@@ -28,7 +32,6 @@
   <%= link_to "Nuevo Post", new_post_path, class: "btn btn-default" %>
 </div>
 <% end %>
-</div>
-
+<div>
 <br> <br>
 

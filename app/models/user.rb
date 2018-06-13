@@ -12,8 +12,13 @@
 #
 
 class User < ApplicationRecord
-
+    has_many :posts, dependent: :destroy
     has_secure_password validations: false
-    has_many :posts
+
+    validates :email, uniqueness: true, format: /@/
+    validates :password, presence: true, on: :create
+    validates :password, length: { in: 6..20 }, allow_nil: true
+    validates :name, presence: true
+    validates :username, presence: true
 
 end

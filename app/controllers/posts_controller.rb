@@ -22,7 +22,6 @@ before_action :private_access, except: [:index, :show]
             flash[:success] = "Fabuloso! Successfully created new post!"
             redirect_to posts_path
         else 
-            flash[:alert] = "Sorry, an error occured. Please try again..."
             render :new
         end 
     end
@@ -38,8 +37,6 @@ before_action :private_access, except: [:index, :show]
         flash[:success] = "Successfully updated post..."
         redirect_to posts_path
         else 
-
-        flash[:alert] = "Sorry, an error occured. Please try again..."
         render :edit
         end 
     end

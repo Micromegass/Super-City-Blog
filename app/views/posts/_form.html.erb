@@ -6,7 +6,17 @@
 <%= form_for @post do |f| %>
 
 <h1 class="form-title"><%= form_title %></h1>
-  
+
+  <% if @post.errors.any?  %>
+  <div class="aler alert-danger">
+  <ul>
+  <% @post.errors.full_messages.each do |msg| %>
+  <li> <%= msg %> </li>
+  <% end %>
+  </ul>
+  </div>
+  <% end  %>
+
 <div class="letter-form">
     <%= f.label :City %>
 </div>
