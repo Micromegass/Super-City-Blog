@@ -14,13 +14,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "posts";
-
+@import "users";
 
 body,
 html {
     height: 100%;
-    margin: 0;
     color: whitesmoke;
+}
+
+body {
+    padding-top: 50px;
 }
 
 .navbar-nav>li>a.avatar {
@@ -31,5 +34,13 @@ html {
     }
 }
 
+
+.alert-danger {
+
+    position: relative;
+    margin-bottom:0;
+    text-align: center;
+
+}
 
 
