@@ -7,7 +7,9 @@
     <span> <%= link_to post.title, post, class:"post-title"%> </span>
   </div>
 
-  <p class="username"> Gracias <%= post.user.name %> para compartir este bonito lugar (fue publicado <%= post.created_at.strftime("%B %d, %Y") %>) </p>
+  <p class="username"> Gracias <% post.user.name %> para compartir este bonito lugar (fue publicado  <%= t Time.now.strftime("%A, %B %d, %Y") %> ) </p>
+
+
 
   <div class="description">
     <span class="post-description"> <%= truncate(post.description, :length => 250 , :seperator => ' ') %></span> 
