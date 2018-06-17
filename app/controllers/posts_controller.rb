@@ -4,7 +4,7 @@ before_action :private_access, except: [:index, :show]
 
 
     def index
-     @posts = Post.all
+     @posts = Post.all.order("updated_at DESC")
     end
     
     def show
