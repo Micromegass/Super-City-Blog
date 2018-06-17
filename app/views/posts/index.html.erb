@@ -7,7 +7,7 @@
     <span> <%= link_to post.title, post, class:"post-title"%> </span>
   </div>
 
-  <p class="username"> Gracias <% post.user.name %> para compartir este bonito lugar (fue publicado  <%= l(post.created_at, format: :long) %>
+  <p class="username"> Gracias <span class="name"><%= post.user.name %></span> para compartir este bonito lugar (fue publicado  <%= l(post.created_at, format: :long) %>)
  </p>
 
 

@@ -4,9 +4,33 @@
     <div class="row">
       <h1 class="post-head"> Eso es:  <%= @post.title %> <h1>
   
-  <div class="post-page">
+    <div class="post-page">
       <p><%= @post.description %></p>
+   </div>
+<br>
+
+     <% @post.comments.each do |comment| %>
+      <div class="panel panel-default">
+    <header class="panel-heading"> <%= comment.user.name %> escribió:  </header>
+    <div class="panel-body"><%= comment.body %></div>
+  </div>
+   <% end %>
+
+
+
+<% if signed_in? %>
+  <%= form_for [@post, @post.comments.build] do |f| %>
+   <div class="formular">
+      <div class="form-group">
+        <%= f.text_area :body, class: "form-control", placeholder: "Agregar comentario" %>
       </div>
+
+      <div class="actions text-right">
+        <%= f.submit "Comentar", class: "btn btn-default" %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
   </div>
 </div>
 
