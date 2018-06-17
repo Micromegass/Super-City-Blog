@@ -4,7 +4,7 @@ before_action :private_access, except: [:index, :show]
 
 
     def index
-     @posts = Post.all
+     @posts = Post.all.order("updated_at DESC")
     end
     
     def show
@@ -19,7 +19,7 @@ before_action :private_access, except: [:index, :show]
         @post = Post.new(post_params)
         @post.user = current_user
         if @post.save
-            flash[:success] = "Fabuloso! Successfully created new post!"
+            flash[:success] = "Fabuloso! Has creado un nuevo post....!"
             redirect_to posts_path
         else 
             render :new
@@ -34,25 +34,23 @@ before_action :private_access, except: [:index, :show]
         @post = Post.find(params[:id])
         if @post.update(post_params)
 
-        flash[:success] = "Successfully updated post..."
+        flash[:success] = "Bravo! Post fue editado..."
         redirect_to posts_path
         else 
         render :edit
         end 
     end
 
-    def destroy
-
-        @post = Post.find(params[:id])
-        if @post.destroy 
-        flash[:success] = "Successfully deleted post"
-        redirect_to root_path
+ 
+     def destroy
+        post = Post.find(params[:id])
+        if post.destroy
+        redirect_to posts_path, notice: "El post fue eliminado con éxito"
         else 
-        flash[:alert] = "Sorry, but an error occured. Please try again"
-        redirect_to root_path
-        end 
-    end
-
+        flash[:notice] = "Habia un error. Por favor intenta otra vez..."
+        end
+    end 
+  
     private
     def post_params
         params.require(:post).permit(:title, :description, :id, :image)
