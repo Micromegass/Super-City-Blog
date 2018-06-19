@@ -25,7 +25,7 @@ html {
 }
 
 body {
-    padding-top: 50px;
+    padding-top: 35px;
 }
 
 .navbar-nav>li>a.avatar {
@@ -38,7 +38,6 @@ body {
 
 
 .alert-danger {
-
     position: relative;
     margin-bottom:0;
     text-align: center;
@@ -46,3 +45,15 @@ body {
 }
 
 
+.searchbar {
+    float: right;
+    padding-top: 10px;
+    color: black;
+}
+
+
+.tag {
+
+display: none;
+
+}

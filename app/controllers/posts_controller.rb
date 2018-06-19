@@ -4,7 +4,11 @@ before_action :private_access, except: [:index, :show]
 
 
     def index
-     @posts = Post.all.order("updated_at DESC")
+         @posts = if params[:term]
+        Post.where("title LIKE ? OR description LIKE ?" , "%#{params[:term]}%", "%#{params[:term]}%")
+        else
+        @posts = Post.all.order("updated_at DESC")
+        end 
     end
 
     def show
@@ -33,7 +37,6 @@ before_action :private_access, except: [:index, :show]
     def update
         @post = Post.find(params[:id])
         if @post.update(post_params)
-
         flash[:success] = "Bravo! Post fue editado..."
         redirect_to posts_path
         else 
@@ -53,7 +56,7 @@ before_action :private_access, except: [:index, :show]
   
     private
     def post_params
-        params.require(:post).permit(:title, :description, :id, :image)
+        params.require(:post).permit(:title, :description, :id, :image, :term)
     end 
 
 end

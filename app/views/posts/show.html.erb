@@ -5,14 +5,14 @@
       <h1 class="post-head"> Eso es:  <%= @post.title %> <h1>
   
     <div class="post-page">
-      <p><%= @post.description %></p>
+      <p><%= markdown(@post.description) %></p>
    </div>
 <br>
 
      <% @post.comments.each do |comment| %>
       <div class="panel panel-default">
     <header class="panel-heading"> <%= comment.user.name %> escribió:  </header>
-    <div class="panel-body"><%= comment.body %></div>
+    <div class="panel-body"><%= markdown(comment.body) %></div>
   </div>
    <% end %>
 

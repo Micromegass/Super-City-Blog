@@ -44,16 +44,19 @@
               <li><%= link_to "Entrar", login_path %></li>
             <% end %>
           </ul>
-          <form class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
+            <div class="searchbar">
+               <%= form_tag(posts_path, method: :get) do %>
+                <%= text_field_tag :term%>
+                <div class="tag">
+                <%= submit_tag 'Buscar'%>
+                </div>
+              <% end %>
             </div>
-          </form>
         </div><!-- /.navbar-collapse -->
       </div>
   </div><!-- /.container -->
 </nav>
-
+'
   <% flash.each do |key, value| %>
     <div class="alert alert-danger"><%= value %></div>
       <% end %>
