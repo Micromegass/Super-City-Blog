@@ -3,8 +3,8 @@
 <div class="allposts">
 
   <br> <br>
-  <div>
-    <span> <%= link_to post.title, post, class:"post-title"%> </span>
+  <div class="post-title">
+     <%= link_to post.title, post%> 
   </div>
 
   <p class="username"> Gracias <span class="name"><%= post.user.name %></span> para compartir este bonito lugar (fue publicado  <%= l(post.created_at, format: :long) %>)
@@ -13,7 +13,7 @@
 
 
   <div class="description">
-    <span class="post-description"> <%= truncate(post.description, :length => 250 , :seperator => ' ') %></span> 
+    <span class="post-description"> <%= markdown(truncate(post.description, :length => 250 , :seperator => ' ')) %></span> 
   </div>
 
 

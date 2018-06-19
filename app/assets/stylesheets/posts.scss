@@ -59,32 +59,31 @@
 }
 
 
-
-
-
-
 .glyphicon {
 
 color:black;
 font-size: 17px;
 
-         &:hover, &:focus {color: #F04500;text-decoration: none;
+         &:hover, &:focus {color: yellowgreen; text-decoration: none;
          }
 
 }
-
 
 
 .post-title {
 
     font-size: 30px;
     font-weight:bold;
-    color: black;
-    text-align: left;
-    text-decoration: none;
+    text-align: center;
 
 }
 
+
+.post-title a {
+
+    color: black;
+    text-decoration: none;
+}
 
 .allposts {
         height: 100%;
