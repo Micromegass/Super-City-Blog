@@ -46,9 +46,10 @@ before_action :private_access, except: [:index, :show]
      def destroy
         post = Post.find(params[:id])
         if post.destroy
-        redirect_to posts_path, notice: "El post fue eliminado con éxito"
-        else 
-        flash[:notice] = "Habia un error. Por favor intenta otra vez..."
+        flash[:danger] = "El post fue eliminado con éxito"
+        redirect_to posts_path
+        else  
+        flash[:danger] = "Habia un error. Por favor intenta otra vez..."
         end
      end 
   
