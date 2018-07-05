@@ -1,26 +1,22 @@
 
 <div class="allposts">
-<div class="container">
+  <div class="container">
     <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
+      <div class="col-sm-6 col-sm-offset-3">
+        <br>
             <h1 class="user-heading"> Ingresar </h1> 
-           
             <%= form_tag controller: :sessions, action: :create do %>
-            
             <div class="form-group">
             <%= label_tag(:email, "email", class:"hidden") %>
             <%= email_field_tag(:email, nil, class: 'form-control input-lg', placeholder:"email") %>
             </div>
-    
             <div class="form-group">
             <%= label_tag(:password, "Password", class:"hidden") %>
             <%= password_field_tag(:password, nil, class: 'form-control input-lg', placeholder:"contraseña") %>
             </div>
-
-          
             <div class="text-right"><%= submit_tag("Ingresar", class: 'btn btn-primary btn-lg btn-block') %></div>
             <% end %>
         </div>
-    </div>
-</div>
+      </div>
+   </div>
 </div>
