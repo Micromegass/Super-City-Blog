@@ -1,56 +1,44 @@
 
 <div class="allposts">
-<div class="container">
+ <div class="container">
   <div class="row">
     <div class="col-sm-10 col-sm-offset-1">
-<%= form_for @post do |f| %>
+      <%= form_for @post do |f| %>
+      <br> <br>
+      <h1 class="form-title"><%= form_title %></h1>
+        <% if @post.errors.any?  %>
+        <div class="aler alert-danger">
+        <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+        <li> <%= msg %> <s/li>
+        <% end %>
+        </ul>
+        </div>
+        <% end  %>
 
-<h1 class="form-title"><%= form_title %></h1>
-
-  <% if @post.errors.any?  %>
-  <div class="aler alert-danger">
-  <ul>
-  <% @post.errors.full_messages.each do |msg| %>
-  <li> <%= msg %> </li>
-  <% end %>
-  </ul>
-  </div>
-  <% end  %>
-
-<div class="letter-form">
-    <%= f.label :City %>
-</div>
-
-  <div class="form-group">
-    <%= f.text_field :title, class:"form-control", placeholder:"Nombre de la ciudad"%>
-  </div>
-
-<div class="letter-form">
-  <%= f.label :Descripción %>
-</div> 
-
-
-   <div class="form-group">
-   <%= f.text_area :description, rows:15, class:"form-control", placeholder: "Cuentanos un poco sobre la ciudad o el lugar especial"%>
+        <div class="letter-form">
+            <%= f.label :City %>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :title, class:"form-control", placeholder:"Nombre de la ciudad"%>
+        </div>
+        <div class="letter-form">
+          <%= f.label :Descripción %>
+        </div> 
+        <div class="form-group">
+        <%= f.text_area :description, rows:15, class:"form-control", placeholder: "Cuentanos un poco sobre la ciudad o el lugar especial"%>
+        </div>
+        <div class="letter-form">
+          <%= f.label :Imágen %>
+        </div>
+        <div class="letter-form"> 
+        <%= f.file_field :image %>
+        </div>          
+        <div class="text-center">
+        <%= f.submit class: 'btn btn-default' %>
+        </div>
+      <% end %>
+     </div>
    </div>
-
-  
-  <div class="letter-form">
-    <%= f.label :Imágen %>
   </div>
-
- <div class="letter-form"> 
- <%= f.file_field :image %>
- </div>
- 
-   
-  <div class="text-center">
-  <%= f.submit class: 'btn btn-default' %>
-  </div>
-
-<% end %>
-
-    </div>
-  </div>
-</div>
 </div>
