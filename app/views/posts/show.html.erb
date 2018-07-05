@@ -3,21 +3,17 @@
   <div class="container">
     <div class="row">
     <br>
-      <h1 class="post-head"> Eso es:  <%= @post.title %> <h1>
-  
+      <h1 class="post-head"> Eso es:  <%= @post.title %> </h1>
     <div class="post-page">
       <p><%= markdown(@post.description) %></p>
    </div>
 <br>
-
-     <% @post.comments.each do |comment| %>
-      <div class="panel panel-default">
+  <% @post.comments.each do |comment| %>
+  <div class="panel panel-default">
     <header class="panel-heading"> <%= comment.user.name %> escribió:  </header>
     <div class="panel-body"><%= markdown(comment.body) %></div>
   </div>
-   <% end %>
-
-
+  <% end %>
 
 <% if signed_in? %>
   <%= form_for [@post, @post.comments.build] do |f| %>
@@ -25,7 +21,6 @@
       <div class="form-group">
         <%= f.text_area :body, class: "form-control", placeholder: "Agregar comentario" %>
       </div>
-
       <div class="actions text-right">
         <%= f.submit "Comentar", class: "btn btn-default" %>
       </div>

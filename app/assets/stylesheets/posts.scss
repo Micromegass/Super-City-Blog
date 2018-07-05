@@ -1,24 +1,18 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-
 .form-title {
     text-align: center;
     font-style: initial;
     font-weight: bold;
-    color : rgba(0, 0, 0, 0.8);
-    
+    color: rgba(0, 0, 0, 0.8);
 }
 
-
 .letter-form {
-    color:black;
+    color: black;
     font-size: 14px;
     text-align: left;
 }
-
 
 .post-page {
     background-color: rgba(0, 0, 0, 0.6);
@@ -26,28 +20,18 @@
     padding: 30px;
     margin-left: 50px;
     margin-right: 50px;
-
-
-
 }
 
 .post-head {
-
     text-align: center;
     font-weight: bold;
     color: black;
-
-
 }
-
 
 .heading {
-
-    text-align: center; 
+    text-align: center;
     font-weight: bold;
 }
-
-
 
 .description {
     background-color: rgba(0, 0, 0, 0.6);
@@ -55,59 +39,47 @@
     border-radius: 5px;
     margin-left: 300px;
     margin-right: 300px;
-
 }
-
 
 .glyphicon {
-
-color:black;
-font-size: 17px;
-
-         &:hover, &:focus {color: yellowgreen; text-decoration: none;
-         }
-
+    color: black;
+    font-size: 17px;
+    &:hover,
+    &:focus {
+        color: yellowgreen;
+        text-decoration: none;
+    }
 }
-
 
 .post-title {
-
     font-size: 30px;
-    font-weight:bold;
+    font-weight: bold;
     text-align: center;
-
 }
 
-
 .post-title a {
-
     color: black;
     text-decoration: none;
 }
 
 .allposts {
-        height: 100%;
-        background-image: url('https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?cs=srgb&dl=architecture-buildings-business-325185.jpg&fm=jpg');
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin-top: 0;
-        
-
+    height: 100%;
+    background-image: url('https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?cs=srgb&dl=architecture-buildings-business-325185.jpg&fm=jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 0;
 }
 
 .allposts {
     text-align: center;
 }
 
-
 .username {
-
-    color:black;
+    color: black;
 }
 
 .name {
-
     font-weight: bold;
 }

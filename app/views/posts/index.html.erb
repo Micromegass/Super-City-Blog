@@ -1,30 +1,33 @@
-
 <% @posts.each do  |post|%>
-<div class="allposts">
-  <br> <br>
-  <div class="post-title">
-     <%= link_to post.title, post%> 
-  </div>
-  <p class="username"> Gracias <span class="name"><%= post.user.name %></span> para compartir este bonito lugar (fue publicado  <%= l(post.created_at, format: :long) %>) </p>
-  <div class="description">
-    <span class="post-description"> <%= markdown(truncate(post.description, :length => 250 , :seperator => ' ')) %></span> 
-  </div>
-
-  <% if signed_in? && post.user == current_user %>
-  <br>
-  <div>
-    <%= link_to  "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_post_path(post) %>
-      <%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este producto?" } %>
+  <div class="allposts">
+    <br>
+    <br>
+    <div class="post-title">
+      <%= link_to post.title, post%>
     </div>
-    <% end %>
+    <p class="username"> Gracias <span class="name"> <%= post.user.name %> </span> para compartir este bonito lugar (fue publicado <%= l(post.created_at, format: :long) %>) </p>
+    
+    <div class="description">
+      <span class="post-description">
+        <%= markdown(truncate(post.description, :length => 250 , :seperator => ' ')) %>
+      </span>
+    </div>
+
+    <% if signed_in? && post.user == current_user %>
+      <br>
+      <div>
+       <%= link_to  "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_post_path(post) %>
+       <%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este producto?" } %>
+      </div>
+      <% end %>
     <% end %>
 
-<% if signed_in? %>
-<br>
-<div class="text-center">
-  <%= link_to "Nuevo Post", new_post_path, class: "btn btn-default" %>
-</div>
-<% end %>
-<div>
-<br> <br>
-
+    <% if signed_in? %>
+        <br>
+      <div class="text-center">
+      <%= link_to "Nuevo Post", new_post_path, class: "btn btn-default" %>
+      </div>
+      <% end %>
+       <div>
+        <br>
+        <br>

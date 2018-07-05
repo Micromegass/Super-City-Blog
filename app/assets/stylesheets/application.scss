@@ -11,13 +11,12 @@
  * It is generally better to create a new file per style scope.
  *
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "posts";
 @import "users";
 @import "comments";
-
-
 body,
 html {
     height: 100%;
@@ -36,15 +35,12 @@ body {
     }
 }
 
-
 .alert {
     padding-top: 35px;
     position: relative;
     margin-bottom: -10px;
     text-align: center;
-
 }
-
 
 .searchbar {
     float: right;
@@ -52,9 +48,6 @@ body {
     color: black;
 }
 
-
 .tag {
-
-display: none;
-
+    display: none;
 }
