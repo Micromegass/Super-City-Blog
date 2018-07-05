@@ -3,7 +3,7 @@ before_action :private_access, except: [:index, :show]
    
     def index
       @posts = if params[:term]
-      Post.where("title LIKE ? OR description LIKE ?" , "%#{params[:term]}%", "%#{params[:term]}%")
+      Post.where("title iLIKE ? OR description iLIKE ?" , "%#{params[:term]}%", "%#{params[:term]}%")
       else
       @posts = Post.all.order("updated_at DESC")
       end 
