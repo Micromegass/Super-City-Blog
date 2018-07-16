@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         flash[:success] = "Bienvenido pana! Entraste exitosamente"
         redirect_to root_path
       else
-        flash.now.alert = "Tu email y/o contraseña son inválidas. Intenta nuevamente."
+        flash.now[:danger] = "Tu email y/o contraseña son inválidas. Intenta nuevamente."
         render :new
       end
   end
